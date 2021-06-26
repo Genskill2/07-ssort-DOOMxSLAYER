@@ -16,8 +16,10 @@ void swap_max(int a[], int b, int c)
   for(i=c;i<b-2;i++)
   {
     if (d<a[i+1])
+    {
       s=i+1;
       d=a[i+1];
+    }
    }
    a[s]=a[c];
    a[c]=d;
