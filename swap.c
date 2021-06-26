@@ -1,34 +1,23 @@
 void swap_max(int a[], int b, int c)
-{
-  int i, d, s;
-  if(c==b-2)
-  {
-  	if(a[c]<a[b-1])
+  {	
+  	int i, d, s;
+  	d=a[c];
+  	for(i=c;i<b-1;i++)
   	{
-  		int f=a[c];
-  		a[c]=a[b-1];
-  		a[b-1]=f;
-  	}
+  	  if (d<a[i+1])
+  	  {
+  	    s=i+1;
+  	    d=a[i+1];
+  	  }
+  	 }
+  	 a[s]=a[c];
+  	 a[c]=d;
   }
-  else
-  {		
-  d=a[c];
-  for(i=c;i<b-1;i++)
-  {
-    if (d<a[i+1])
-    {
-      s=i+1;
-      d=a[i+1];
-    }
-   }
-   a[s]=a[c];
-   a[c]=d;
-   }
- }
 
 
 void ssort(int m[], int n)
 {
   for(int j=0;j<n-1;j++)
-    swap_max(m,n,j);
+    {
+    	swap_max(m,n,j);
 }
